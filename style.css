@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "poppins", sans-serif;
 }
 .container {
   position: relative;
@@ -80,10 +80,9 @@ nav ul li a:hover::after {
 .text-box h1 {
   font-size: 200px;
   line-height: 160px;
-  letter-spacing: 10px;
+  letter-spacing: 15px;
   margin-left: -10px;
   color: transparent;
-  font-weight: 400;
   -webkit-text-stroke: 1px #fff;
   background: url(./assets/back.png);
   -webkit-background-clip: text;
