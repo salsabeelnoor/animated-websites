@@ -13,24 +13,10 @@ body {
 body {
   background-image: radial-gradient(circle, #7f09ff, #0f0423);
 }
-/* .container {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  background: #fff;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 20px;
-  box-sizing: 0 0 20px 0 #000;
-} */
+
 #demo {
   width: 500px !important;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-}
-img {
-  border: 2px solid red;
 }
