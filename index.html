@@ -5,22 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>3D Rotating Slider</title>
+    <title>360 Rotating</title>
 </head>
 
 <body>
-    <section class="book-showcase">
-        <div class="wrapper">
-            <div class="book">
-                <div class="front"></div>
-                <div class="side"></div>
-                <div class="back"></div>
-                <div class="pages"></div>
-                <div class="shadow"></div>
-            </div>
+    <div class="container">
+        <div id="demo">
+
         </div>
-    </section>
-    <script src="script.js"></script>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="./3dEye-master/3deye.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log('ready')
+            $("#demo").vc3dEye({
+                imagePath: "assets/", // the location where you’ve put the images.
+                totalImages: 36, // the number of images you have.
+                imageExtension: "jpg" // the extension of the images. Make sure all the images have same extension.
+            });
+
+        });
+    </script>
 </body>
 
 </html>
