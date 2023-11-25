@@ -1,134 +1,73 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "poppins", sans-serif;
 }
-.container {
+.book-showcase {
+  background: linear-gradient(90deg, #fff, #eee);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Resize the whole thing by changing the font size on this element */
+  font-size: 12px;
   position: relative;
+}
+.book-showcase::before {
+  content: "";
+  position: absolute;
+  top: -30vh;
+  left: 0;
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent),
-    url("./assets/background.png");
-  background-size: cover;
-  background-position: center;
-  padding: 0 8%;
+  background: radial-gradient(#fff, #e4e4e4);
 }
-
-nav {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 5px 0;
+.wrapper {
+  perspective: 1000px;
 }
-.logo {
-  width: 120px;
-  cursor: pointer;
-}
-
-.cart-icon {
-  width: 30px;
-  cursor: pointer;
-}
-
-nav ul {
-  flex: 1;
-  text-align: right;
-  padding-right: 30px;
-}
-
-nav ul li {
-  display: inline-block;
-  list-style-type: none;
-  margin: 10px 30px;
-}
-
-nav ul li a {
-  color: #ffff;
-  font-size: 20px;
-  text-decoration: none;
+.book {
+  transform-style: preserve-3d;
+  width: 27.0625em;
+  height: 40.5em;
+  /* Center the book */
+  transform-origin: 13.53125em 4.375em;
   position: relative;
 }
-
-nav ul li a::after {
-  content: "";
-  width: 0;
-  height: 3px;
+.book > div {
   position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  transition: width 0.3s;
+  height: 40.5em;
 }
-
-nav ul li a:hover::after {
-  width: 50%;
+/* Positioning each side in 3d space*/
+.front {
+  width: 27.0625em;
+  background: url(./assets/front.jpg);
+  transform: translate3d(0, 0, 2.1875em);
 }
-
-.text-box {
-  color: #ffff;
-  position: absolute;
-  bottom: 8%;
+.back {
+  width: 27.0625em;
+  background: url(./assets/back.jpg);
+  transform: rotateY(180deg) translate3d(0, 0, 2.12em);
 }
-.text-box p {
-  font-size: 50px;
-  font-weight: 600;
+.side {
+  width: 4.375em;
+  transform: rotateY(-90deg) translate3d(0, 0, 2.1875em);
+  background: url(./assets/side.jpg);
 }
-.text-box h1 {
-  font-size: 200px;
-  line-height: 160px;
-  letter-spacing: 15px;
-  margin-left: -10px;
-  color: transparent;
-  -webkit-text-stroke: 1px #fff;
-  background: url(./assets/back.png);
-  -webkit-background-clip: text;
-  background-position: 0 0;
-  animation: back 20s linear infinite;
+.pages {
+  width: 4.3em;
+  background: #ccc;
+  transform: rotateY(91deg) translate3d(-7px, 0, 24.8em);
+  transform-origin: bottom;
 }
-
-@keyframes back {
-  100% {
-    background-position: 2000px 0;
-  }
+.book .shadow {
+  width: 27.0625em;
+  height: 4.375em;
+  background: radial-gradient(rgba(0, 0, 0, 0.4), transparent);
+  transform: rotateX("90deg") translate3d(0, 2.1875em, -38em);
+  transform-origin: bottom;
 }
-
-.text-box h3 {
-  font-size: 40px;
-  font-weight: 500;
-}
-
-.text-box .row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.text-box a {
-  color: #ffff;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin-right: 20px;
-  border: 2px solid #ffff;
-  display: flex;
-  align-items: center;
-}
-.text-box a span {
-  font-size: 30px;
-  line-height: 18px;
-  margin-left: 5px;
-}
-.social-icons {
-  position: absolute;
-  right: 5%;
-  bottom: 8%;
-}
-.social-icons img {
-  width: 35px;
-  display: block;
-  margin: 25px 5px;
+.front,
+.back,
+.side {
+  background-size: cover;
+  /* Prevents Default Image Dragging */
+  pointer-events: none;
 }
